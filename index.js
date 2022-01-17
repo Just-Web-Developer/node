@@ -1,14 +1,12 @@
-const http = require('http')
-
 const PORT = process.env.PORT || 5000
+const Application = require('./framework/Application')
+const userRouter = require('./src/user-router')
 
-const server = http.createServer((req, res) => {
-    res.writeHead(200,{
-        'Content-type': 'text/html; charset=utf-8'
-    })
-    res.end(req.headers.origin)
-})
+const app = new Application()
 
-server.listen(PORT, ()=>{
-    console.log(`Server started on PORT ${PORT}`)
-})
+
+
+app.addRouter(userRouter)
+
+app.listen(PORT, () => console.log(`Server started on PORT ${PORT}`))
+
