@@ -3,7 +3,7 @@ var cors = require('cors')
 var app = express()
 
 var corsOptions = {
-    origin: 'https://pedantic-hopper-f5b19a.netlify.app/',
+    origin: 'https://pedantic-hopper-f5b19a.netlify.app',
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 
